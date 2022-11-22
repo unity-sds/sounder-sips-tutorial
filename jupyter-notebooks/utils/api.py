@@ -35,6 +35,7 @@ def deploy_application(token, app_config):
     try:
         headers = _get_headers(token, {
            'Content-type': 'application/json'
+           'Content-type': 'application/json; charset=utf-8'
         })
         response = requests.post(settings.WPST_API_DOMAIN + "/processes", headers=headers, json=app_config)
         response.raise_for_status()
